@@ -1,0 +1,34 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: SistemaUrinario
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Marla
+    family-names: Espinoza Bedoy
+    email: l21212152@tectijuana.edu.mx
+  - given-names: Abraham
+    family-names: Gómez Aguilar
+    email: l21212158@tectijuana.edu.mx
+  - given-names: Jesus
+    family-names: Zamora Cervantes
+    email: l21212185@tectijuana.edu.mx
+identifiers:
+  - type: url
+    value: >-
+      https://github.com/JesusZamora14/Proyecto-Final.-Sistema-Urinario/tree/main/PROYECTO%20FINAL.%20Sistema%20Urinario
+  - type: url
+    value: >-
+      https://github.com/JesusZamora14/Sistema-Urinario---Incontinencia-Urinaria
+url: >-
+  https://github.com/JesusZamora14/Sistema-Urinario---Incontinencia-Urinaria
+abstract: Modelado Fisiológico del Sistema Urinario
+keywords:
+  - >-
+    Uretra, Incontinencia, Filtración Glomerular,
+    Controlador, Orina
+license: BSD-2-Clause
