@@ -1,0 +1,358 @@
+
+\documentclass[letterpaper,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Friday, December 13, 2024 17:43:26}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{ComputeDefs=
+%$R=10\times 10^{3}$
+%$L=4.7\times 10^{-3}$
+%$C=220\times 10^{-6}$
+%}
+
+
+\input{tcilatex}
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+\pretolerance=2000 \tolerance=3000
+\renewcommand{\abstractname}{Resumen}
+
+\begin{document}
+
+\title{Proyecto: Sistema Urinario}
+\author{Marla Espinoza Bedoya (21212152); Abraham G\'{o}mez
+Aguilar(21212158); \and Jesus Zamora Cervantes (21212185) \\
+%EndAName
+Departamento de Ingenier\'{\i}a El\'{e}ctrica y Electr\'{o}nica\\
+Tecnol\'{o}gico Nacional de M\'{e}xico / Instituto Tecnol\'{o}gico de Tijuana%
+}
+\maketitle
+
+\noindent \textbf{Palabras clave:} Uretra, Incontinencia, Filtraci\'{o}n
+glomerular; Controlador; Orina.
+
+\noindent Correo: \textbf{l21212152@tectijuana.edu.mx}
+
+\noindent \noindent Carrera: \textbf{Ingenier\'{\i}a Biom\'{e}dica}
+
+\noindent Asignatura: \textbf{Modelado de Sistemas Fisiol\'{o}gicos}
+
+\noindent Profesor: \href{https://biomath.xyz/}{\textbf{Dr. Paul Antonio
+Valle Trujillo}} (paul.valle@tectijuana.edu.mx)
+
+\section{Funci\'{o}n de transferencia}
+
+\subsection{Ecuaciones principales}
+
+Se analiza el circuito utilizando la Ley de Voltajes de Kirchhoff y as\'{\i}
+encontrar la ecuaci\'{o}n de la presi\'{o}n hidrost\'{a}tica sangu\'{\i}nea, 
+$P_{h}(t)$ que llega a las nefronas en los ri\~{n}ones y la presi\'{o}n de
+salida $P_{e}(t)$ que percibe la uretra y sus esf\'{\i}nteres que retienen
+la orina, es decir, la entrada y salida del sistema respectivamente. El ri%
+\~{n}\'{o}n realiza dos funciones principales: filtrar la sangre y
+reabsorber el contenido, lo que da como consecuencia el desecho de lo que no
+sirve, contenido en la orina. Para representar esto se utilizan dos
+resistencias, la primera $R_{1}$ en la rama principal en serie con la presi%
+\'{o}n de entrada cuyo flujo corresponde a la sangre que llega a los ri\~{n}%
+ones $Fs(t)$, y la segunda en la primera rama secundaria, representando la
+reabsorci\'{o}n, cuyo flujo es igual al flujo de sangre a los ri\~{n}ones
+menos la orina generada como desecho, $Fs(t)-O(t).$ De tal manera que la
+presi\'{o}n de entrada se representa como:
+
+\begin{equation*}
+P_{h}(t)=R_{1}Fs(t)+R_{2}\left[ Fs(t)-O(t)\right]
+\end{equation*}
+
+Luego en la segunda rama secundaria se representan el resto de los \'{o}%
+rganos del sistema urinario, los ureteres al presentar movimientos perist%
+\'{a}lticos, los cuales son contracciones que generan ondas que ayudan a
+transportar la orina desde los ri\~{n}ones hacia la vejiga, impidiendo que
+fluya en sentido contrario, se representa con un inductor $L$, cuyo flujo
+corresponde a la orina $O(t)$. Luego llega a la vejiga, al cual est\'{a}
+prevista de propiedades el\'{a}sticas que le permiten expandirse a medida
+que se llena de orina, lo cual permite que sea representada con un capacitor 
+$C$. Dicho esto la rama donde sucede la reabsorci\'{o}n y por done fluye la
+orina puede ser igualada de la siguiente manera: 
+\begin{equation*}
+R_{2}\left[ Fs(t)-O(t)\right] =L\frac{dO(t)}{dt}+\frac{1}{C}\int
+O(t)dt+R_{3}O(t)
+\end{equation*}
+
+Finalmente, cuando es momento de excretar la orina producida, se dirige a la
+uretra la cual est\'{a} rodeada de esf\'{\i}nteres internos y externos, este 
+\'{u}ltimo siendo voluntario, que permite liberar la orina de manera
+consciente, se representa con una resistencia $R_{3},$cuyo flujo es el mismo
+y por donde haya salida.%
+\begin{equation*}
+P_{e}(t)=R_{3}O(t)
+\end{equation*}
+
+\subsection{Transformada de Laplace}
+
+Se aplica la transformada de Laplace a las ecuaciones principales, cuyo m%
+\'{e}todo consiste en el intercambio de la variable dependiente por la letra
+s, lo cual transforma las ecuaciones del dominio del tiempo al de
+frecuencia. Se obtienen los siguientes resultados, para la funci\'{o}n de
+entrada:%
+\begin{equation*}
+P_{h}(s)=R_{1}Fs(s)+R_{2}\left[ Fs(s)-O(s)\right] 
+\end{equation*}
+
+Para la segunda ecuaci\'{o}n principal se obtiene:%
+\begin{equation*}
+R_{2}\left[ Fs(s)-O(s)\right] =LsO(s)+\frac{O(s)}{Cs}+R_{3}O(s)
+\end{equation*}
+
+Para la ecuaci\'{o}n de salida del sistema se obtiene:%
+\begin{equation*}
+P_{e}(s)=R_{3}O(s)
+\end{equation*}
+
+\subsection{Procedimiento algebraico}
+
+Para obtener la funci\'{o}n de transferencia se deben despejar las
+ecuaciones transformadas a Laplace para que la entrada y salida est\'{e}n en
+funci\'{o}n de una \'{u}nica variable dependiente, en este caso se busca
+mantener ambas ecuaciones en funci\'{o}n de $O(s),$ ya que se puede observar
+que la ecuaci\'{o}n de la presi\'{o}n de salida se encuentra \'{u}nicamente
+en funci\'{o}n de la misma. Para esto se despeja el flujo de sangre
+representado por $Fs(s)$. Se empieza por la segunda ecuaci\'{o}n principal,
+despejando el \'{u}nico t\'{e}rmino que contiene $Fs(s)$:%
+\begin{equation}
+R_{2}Fs(s)-R_{2}O(s)=LsO(s)+\frac{O(s)}{Cs}+R_{3}O(s)
+\end{equation}
+
+\begin{equation*}
+R_{2}Fs(s)=LsO(s)+\frac{O(s)}{Cs}+R_{3}O(s)+R_{2}O(s)
+\end{equation*}
+
+\begin{equation*}
+R_{2}Fs(s)=\frac{LsO(s)Cs+O(s)+R_{3}O(s)Cs+R_{2}O(s)Cs}{Cs}
+\end{equation*}
+
+\begin{equation*}
+Fs(s)=\frac{LsO(s)Cs+O(s)+R_{3}O(s)Cs+R_{2}O(s)Cs}{R_{2}Cs}
+\end{equation*}
+
+Una vez hecho esto, se factoriza la variable dependiente representada por $%
+O(s)$, para ser suprimida con mayor facilidad posteriormente.%
+\begin{equation*}
+Fs(s)=O(s)\left[ \frac{LsCs+1+R_{3}Cs+R_{2}Cs}{R_{2}Cs}\right] 
+\end{equation*}
+
+Tomando la primera ecuaci\'{o}n principal, se sustituye la ahora despejada $%
+Fs(s)$ en los t\'{e}rminos correspondientes:%
+\begin{equation*}
+P_{h}(s)=R_{1}Fs(s)+R_{2}Fs(s)-R_{2}O(s)
+\end{equation*}%
+\begin{equation*}
+P_{h}(s)=Fs(s)\left[ R_{1}+R_{2}\right] -R_{2}O(s)
+\end{equation*}%
+\begin{equation*}
+P_{h}(s)=O(s)\left[ \frac{LsCs+1+R_{3}Cs+R_{2}Cs}{R_{2}Cs}\right] \left[
+R_{1}+R_{2}\right] -R_{2}O(s)
+\end{equation*}
+
+Se multiplica, se condensa todo para que todas las variables tengan el mismo
+denominador y se reducen t\'{e}rminos. 
+\begin{equation*}
+P_{h}(s)=O(s)\left[ \frac{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}+\left( R_{2}\right) ^{2}Cs%
+}{R_{2}Cs}\right] -R_{2}O(s)
+\end{equation*}%
+\begin{equation*}
+P_{h}(s)=O(s)\left[ \frac{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}+\left( R_{2}\right) ^{2}Cs-\left( R_{2}\right) ^{2}Cs%
+}{R_{2}Cs}\right] 
+\end{equation*}
+
+Se mantiene despejada el flujo $O(s)$ en la nueva ecuaci\'{o}n de entrada.
+
+\begin{equation*}
+P_{h}(s)=O(s)\left[ \frac{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}%
+}{R_{2}Cs}\right] 
+\end{equation*}%
+Se aplica la funci\'{o}n de transferencia colocando a la entrada como el
+denominador de la operaci\'{o}n y la salida como el numerador, en ambas se
+factoriza el flujo $O(s)$ para eliminarlo de la ecuaci\'{o}n al ser un t\'{e}%
+rminocontenido en ambas ecuaciones.
+
+\begin{equation*}
+\frac{P_{e}(s)}{P_{h}(s)}=\frac{R_{3}O(s)}{O(s)\left[ \frac{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}%
+}{R_{2}Cs}\right] }
+\end{equation*}%
+\begin{equation*}
+\frac{P_{e}(s)}{P_{h}(s)}=\frac{R_{3}}{\frac{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}%
+}{R_{2}Cs}}
+\end{equation*}
+
+Se multiplica y se reducen t\'{e}rminos para obtener:%
+\begin{equation*}
+\frac{P_{e}(s)}{P_{h}(s)}=\frac{R_{2}R_{3}Cs}{%
+LCs^{2}R_{1}+LCs^{2}R_{2}+R_{1}+R_{2}+R_{3}CsR_{1}+R_{3}CsR_{2}+R_{2}CsR_{1}}
+\end{equation*}
+
+Finalmente se agrupan las variables del mismo nivel y se cambia la prioridad
+de los t\'{e}rminos, primero R, luego C y finalmente L.%
+\begin{equation*}
+\frac{P_{e}(s)}{P_{h}(s)}=\frac{R_{2}R_{3}Cs}{\left( R_{1}CL+R_{2}CL\right)
+s^{2}+\left( R_{1}R_{3}C+R_{2}R_{3}C+R_{1}R_{2}C\right) s+R_{1}+R_{2}}
+\end{equation*}
+
+\subsection{Resultado}
+
+La funci\'{o}n de transferencia obtenida para la representaci\'{o}n del
+sistema urinario es:%
+\begin{equation*}
+\frac{P_{e}(s)}{P_{h}(s)}=\frac{R_{2}R_{3}Cs}{\left( R_{1}CL+R_{2}CL\right)
+s^{2}+\left( R_{1}R_{3}C+R_{2}R_{3}C+R_{1}R_{2}C\right) s+R_{1}+R_{2}}
+\end{equation*}
+
+\section{Estabilidad del sistema en lazo abierto}
+
+Para determinar la estabilidad del sistema en lazo abierto, se calculan los
+polos de la funci\'{o}n de transferencia, es decir:%
+\begin{equation*}
+a_{2}s^{2}+a_{1}s+a_{0}=0
+\end{equation*}
+
+donde las variables son:%
+\begin{eqnarray*}
+a_{2} &=&R_{1}CL+R_{2}CL \\
+a_{1} &=&R_{1}R_{3}C+R_{2}R_{3}C+R_{1}R_{2}C \\
+a_{0} &=&R_{1}+R_{2}
+\end{eqnarray*}%
+Valores de par\'{a}metros para el control y el caso:%
+\begin{equation*}
+R_{1}=10\times 10^{3}
+\end{equation*}%
+\begin{equation*}
+R_{2}=1000\times 10^{3}
+\end{equation*}%
+\begin{equation*}
+L=4.7\times 10^{-3}
+\end{equation*}
+
+Estabilidad para el control (individuo saludable):%
+\begin{equation*}
+C=440\times 10^{-6}
+\end{equation*}%
+\begin{equation*}
+R_{3}=20\times 10^{3}
+\end{equation*}%
+\begin{equation*}
+2.\,\allowbreak 088\,7s^{2}+1.\,\allowbreak 3288\times 10^{7}s+0.6=0.0
+\end{equation*}
+
+En donde las ra\'{\i}ces de la ecuaci\'{o}n de segundo orden son:%
+\begin{equation*}
+\lambda _{1}=-4.\,\allowbreak 515\,4\times 10^{-8}
+\end{equation*}%
+\begin{equation*}
+\lambda _{2}=-6.\,\allowbreak 361\,9\times 10^{6}
+\end{equation*}
+
+Para el caso del individuo enfermo (paciente con incontinencia):%
+\begin{equation*}
+C=110\times 10^{-6}
+\end{equation*}%
+\begin{equation*}
+R_{3}=5\times 10^{3}
+\end{equation*}%
+\begin{equation*}
+0.522\,17s^{2}+1655.5\times 10^{3}s+0.6=0.0
+\end{equation*}
+
+Las ra\'{\i}ces obtenidas son las siguientes:%
+\begin{equation*}
+\lambda _{2}=-3.\,\allowbreak 624\,3\times 10^{-7}
+\end{equation*}%
+\begin{equation*}
+\lambda _{2}=-3.\,\allowbreak 624\,3\times 10^{-7}
+\end{equation*}
+
+Se observa que las ambos pares de ra\'{\i}ces para control y caso son reales
+y negativas, por lo tanto, se concluye que ambos sistemas son estables.
+
+\section{Modelo de ecuaciones integro-diferenciales}
+
+Para obtener el modelo de ecuaciones integro-diferenciales se despejan los
+flujos o corrientes, en este caso correspondientes al flujo de sangre de
+entrada y la orina, junto con la salida, siendo la presi\'{o}n en la uretra,
+ya que corresponden a las variables dependientes del sistema. Se hace a
+partir de las ecuaciones principales:%
+\begin{eqnarray*}
+Fs(t) &=&\left[ P_{h}(t)-R_{1}Fs(t)+R_{2}O(t)\right] \left[ \frac{1}{R_{2}}%
+\right] , \\
+O(t) &=&\left[ R_{2}Fs(t)-L\frac{dO(t)}{dt}-\frac{1}{C}\int O(t)dt-R_{3}O(t)%
+\right] \left[ \frac{1}{R_{2}}\right]  \\
+P_{e}(t) &=&R_{3}O(t)
+\end{eqnarray*}
+
+\section{Error en estado estacionario}
+
+Para calcular el error en estado estacionario, es necesario calcular el
+siguiente l\'{\i}mite, donde R(s) representa un escal\'{o}n de entrada [1/s].%
+\begin{equation*}
+e\left( t\right) =\lim_{s\rightarrow 0}sR\left( s\right) \left[ 1-\dfrac{%
+P_{h}\left( s\right) }{P_{e}\left( s\right) }\right] =\lim_{s\rightarrow 0}s%
+\frac{1}{s}\left[ 1-\frac{R_{2}R_{3}Cs}{\left( R_{1}CL+R_{2}CL\right)
+s^{2}+\left( R_{1}R_{3}C+R_{2}R_{3}C+R_{1}R_{2}C\right) s+R_{1}+R_{2}}\right]
+\end{equation*}%
+\begin{equation*}
+=1V.
+\end{equation*}%
+\begin{equation*}
+R(s):\text{Representa la entrada al sistema [el escal\'{o}n }\frac{1}{s}%
+\text{]}
+\end{equation*}%
+\begin{equation*}
+\dfrac{P_{h}\left( s\right) }{P_{e}\left( s\right) }:\text{Representa la
+entrada al sistema [el escal\'{o}n }\frac{1}{s}\text{]}
+\end{equation*}
+
+\section{C\'{a}lculo de componentes para el controlador PID}
+
+Para obtener los valores de ganancia que permitan elaborar un controlador
+PID se grafica la respuesta de presi\'{o}n del paciente sano (control), el
+tratamiento y el caso de paciente enfermo del sistema urinario en lazo
+cerrado configurando la velocidad de la respuesta para que el sobreimpulso
+no sea mayor a 10\% (esto porque se busca mantener la respuesta del
+tratamiento sea lo m\'{a}s parecida a la se\~{n}al de control para que sea
+efectivo el controlador), al realizar esto se obtiene un controlador de tipo
+I, es decir solo se tiene la parte integral del mismo, lo quiere decir que
+es \'{u}til para eliminar el error en estado estacionario a la salida del
+sistema. El valor de ganancia obtenido para dicho elemento de control tiene
+un valor de:%
+\begin{equation*}
+k_{I}=\frac{1}{R_{e}C_{r}}=1317.4583
+\end{equation*}
+
+\begin{equation*}
+C_{r}=1\times 10^{-6}
+\end{equation*}
+
+Se propone un valor de capacitor de Cr, para obtener los valores de los
+componentes electr\'{o}nicos necesarios para que el controlador regule
+adecuadamente el sistema, que es el siguiente:
+
+\begin{equation*}
+R_{e}=\frac{1}{k_{I}C_{r}}=\frac{1}{(1317.4583)(1\times 10^{-6})}%
+=759.04\Omega 
+\end{equation*}
+
+\end{document}
