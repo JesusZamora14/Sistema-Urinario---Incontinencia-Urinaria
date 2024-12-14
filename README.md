@@ -6,6 +6,7 @@ Marla Espinoza Bedoy, Abraham Gómez Aguilar, Jesus Zamora Cervantes
 Departamento de Ingeniería Eléctrica y Electrónica, Tecnológico Nacional de México/IT Tijuana, Blvd. Alberto Limón Padilla s/n, Tijuana, C.P. 22454, B.C., México. Email:  l21212152@tectijuana.edu.mx; l21212158@tectijuana.edu.mx; l21212185@tectijuana.edu.mx
 Asignaturas o departamento donde se puede usar la Actividad
 Modelado de Sistemas Fisiológicos de Ingeniería Biomédica
+
 Información general
 El modelado de sistemas fisiológicos es una herramienta importante en Ingeniería Biomédica, permite comprender el funcionamiento del cuerpo humano, así como diseñar y evaluar terapias y dispositivos médicos; se define como el proceso de formular modelos matemáticos o computacionales que representan el comportamiento y la interacción de los sistemas biológicos y fisiológicos. Esta asignatura pretende aportar al perfil del Ingeniero Biomédico la capacidad de realizar investigación científica en el área de Biología de Sistemas con la finalidad de dirigir y participar en equipos de trabajo interdisciplinarios en contextos nacionales e internacionales, así como de proporcionar soluciones informáticas para resolver problemas en el campo de la Ingeniería Biomédica con ética profesional; lo anterior al proporcionar al estudiante bases sólidas para modelizar sistemas y diseñar controladores para la solución de problemas en las áreas de atención médica y del sector industrial médico. La construcción de analogías entre circuitos eléctricos y sistemas fisiológicos para la formulación de modelos matemáticos y el diseño de controladores mediante la experimentación in silico brindan herramientas de gran aplicación en el quehacer profesional del Ingeniero Biomédico.
 
@@ -20,6 +21,7 @@ Se inicia con una rama principal que representa la llegada de la sangre y sus co
 Se utiliza una función de impulso para representar la capacidad de la vejiga y la uretra, revelando diferencias claves entre una condición normal y patológica (incontinencia) mediante el estímulo abrupto como un aumento momentáneo de presión o flujo urinario, permitiendo evaluar cómo se almacena y distribuye en los órganos del sistema urinario que se encargan de la expulsión de la orina.
 Referencias principales
 [1] J. E. Robles. La incontinencia urinaria. Anales del sistema sanitario de Navarra. Gobierno de Navarra. Departamento de Salud. vol. 29, no. 2, pp. 219-231, 2006.
+
 [2] National Institute of Diabetes and Digestive and Kidney Diseases. Síntomas y causas de los problemas de control de vejiga (incontinencia urinaria). Accedido: Dic. 06, 2024. {En línea] Disponible:https://www.niddk.nih.gov/health-information/informacion-de-la-salud/enfermedades-urologicas/problemas-control-vejiga-incontinencia-urinaria/sintomas-causascontinencia urinaria
 
 
